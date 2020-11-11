@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: white;
+    font-size: 3em;
+}
+
+.parent {
+    height: 100vh;
+    border: 1em solid black;
+
+    display: flex;
+    /* flex-direction: column; Change direction of the content of the flex-container */
+    justify-content: space-evenly; /* Justify horizontally - Optional space */
+    /* align-items: center; Justify vertically */
+    flex: wrap; /* Makes the content jump down one row when browser width is too small to fit */
+    align-content: flex-start; /* Changes how the objects align after they jump down */
+    /* flex-basis: 15vw; Sets the default width (minimum?),better to use than width/min-width  */
+}
+
+.child1 {
+    width: 15vw;
+    height: 15vw;
+    background: blue;
+    order: 1; /* Sets the order of the flex-children, default is 0 */
+}
+
+.child2 {
+    width: 15vw;
+    height: 15vw;
+    background: red;
+    order: 3;
+    flex-grow: 1; /* Takes all the remaining space split by all flex-grows in parent (see child 4) */
+}
+
+.child3 {
+    width: 15vw;
+    height: 15vw;
+    background: darkgreen;
+    order: 2;
+}
+
+.child4 {
+    width: 15vw;
+    height: 15vw;
+    background: purple;
+    order: 4;
+    flex-grow: 2; 
+}
+
